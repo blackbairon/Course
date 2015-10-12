@@ -24,9 +24,9 @@ public class TicketType {
     private String DispatchStation;
     @DatabaseField
     private String ArrivalStation;
-    @DatabaseField(canBeNull = true ,foreign = true)
+    @DatabaseField(foreign = true)
     private Wagon WagonID;
     @DatabaseField(foreign = true)
-    private int CashbocID;
+    private Cashbox CashbocID;
 
 }

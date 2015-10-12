@@ -12,7 +12,9 @@ public class Cashbox {
     @DatabaseField(generatedId = true)
     private int ID;
     @DatabaseField(foreign = true)
-    private int StationID;
+    private Station StationID;
     @DatabaseField(foreign = true)
-    private int EmployeeID;
+    private Employee EmployeeID;
+
+
 }

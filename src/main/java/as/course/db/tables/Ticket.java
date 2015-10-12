@@ -1,5 +1,6 @@
 package as.course.db.tables;
 
+import com.j256.ormlite.field.DataType;
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 
@@ -15,7 +16,7 @@ import java.util.Date;
  */
 @DatabaseTable(tableName = "ticket")
 public class Ticket{
-    private Connection c;
+
     private String tableName = "Ticket";
 
     @DatabaseField(generatedId = true)
@@ -24,8 +25,8 @@ public class Ticket{
     private String Direction;
     @DatabaseField
     private int TrainID;
-    @DatabaseField
-    private java.sql.Date DispatchDate;
+    @DatabaseField(dataType = DataType.DATE)
+    private java.util.Date DispatchDate;
     @DatabaseField
     private float Cost;
     @DatabaseField
@@ -34,13 +35,15 @@ public class Ticket{
     private String DispatchStation;
     @DatabaseField
     private String ArrivalStation;
-    /*@DatabaseField(foreign = true)
-    private int WagonID;
-    @DatabaseField(foreign = true)
-    private int CashbocID;*/
+    @DatabaseField(foreign = true, columnName = "WagonID")
+    private Wagon WagonID;
+    @DatabaseField(foreign = true, columnName = "CashbocID")
+    private Cashbox CashbocID;
 
 
+    public Ticket(){
 
+    }
     public String toString(){
         return tableName.toUpperCase() + "\nDirection: " + Direction + "\nDispatch date: " + DispatchDate
                 + "\nCost: " + Cost + "\nSeat number: " + SeatNumber

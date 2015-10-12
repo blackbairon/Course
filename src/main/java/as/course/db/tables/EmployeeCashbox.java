@@ -9,7 +9,7 @@ import com.j256.ormlite.table.DatabaseTable;
 @DatabaseTable(tableName = "employee-cashbox")
 public class EmployeeCashbox {
     @DatabaseField(generatedId = true, foreign = true)
-    private int CashboxID;
+    private Cashbox CashboxID;
     @DatabaseField(foreign = true)
-    private int EmployeeID;
+    private Employee EmployeeID;
 }

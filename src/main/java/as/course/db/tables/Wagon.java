@@ -15,8 +15,8 @@ public class Wagon {
     @DatabaseField
     private float Cost;
     @DatabaseField(foreign = true)
-    private int TicketID;
+    private Ticket TicketID;
     @DatabaseField(foreign = true)
-    private int TrainID;
+    private Train TrainID;
 
 }

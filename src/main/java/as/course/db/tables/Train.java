@@ -19,5 +19,5 @@ public class Train {
     @DatabaseField
     private String ArrivalDate;
     @DatabaseField(foreign = true)
-    private int EmployeeID;
+    private Employee EmployeeID;
 }

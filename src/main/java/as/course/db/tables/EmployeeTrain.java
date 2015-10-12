@@ -9,7 +9,7 @@ import com.j256.ormlite.table.DatabaseTable;
 @DatabaseTable(tableName = "employee-train")
 public class EmployeeTrain {
     @DatabaseField(generatedId = true, foreign = true)
-    private int TrainID;
+    private Train TrainID;
     @DatabaseField(generatedId = true, foreign = true)
-    private int EmployeeID;
+    private Employee EmployeeID;
 }
